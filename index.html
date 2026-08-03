@@ -50,9 +50,11 @@
     backdrop-filter:blur(10px);
     border-bottom:1px solid var(--line);
   }
-  .header-inner{
+ .header-inner{
     display:flex; align-items:center; justify-content:space-between;
-    padding:16px 24px; max-width:1180px; margin:0 auto;
+    padding:16px 24px; max-width:1180px; margin:0 auto; gap:20px;
+  }
+  .header-inner .search-input{ flex:1; max-width:320px; }
   }
   .logo{
     display:flex; align-items:center; gap:10px;
@@ -317,6 +319,7 @@
 <header>
   <div class="header-inner">
     <div class="logo"><span class="logo-badge">🎴</span> VOLTXSTORE</div>
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar carta...">
     <nav class="main-nav">
       <a href="#catalogo">Cartas</a>
       <a href="#sobre">Sobre</a>
@@ -372,7 +375,6 @@
       <h2>Catálogo</h2>
       <p>Filtre por tipo de energia e adicione ao carrinho.</p>
     </div>
-    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar carta...">
     <div class="filters" id="filters"></div>
   </div>
   <div class="grid" id="grid"></div>
