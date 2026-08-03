@@ -491,7 +491,7 @@
         : `<span class="glyph">${t.glyph}</span>`;
       return `
         <article class="card">
-          <div class="card-art" style="background:linear-gradient(160deg, ${t.color}, #14162B)">
+          <div class="card-art ${p.image ? 'has-image' : ''}" style="background:linear-gradient(160deg, ${t.color}, #14162B)">
             <span class="card-badge">${t.label}</span>
             <span class="card-hp mono">HP ${p.hp}</span>
             ${artInner}
