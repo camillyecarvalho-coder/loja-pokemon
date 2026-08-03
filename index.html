@@ -160,6 +160,14 @@
   }
   .catalog-head h2{ font-size:2rem; }
   .catalog-head p{ color:var(--text-dim); margin-top:6px; }
+
+  .search-input{
+    background:var(--surface); border:1px solid var(--line); color:var(--text);
+    padding:10px 16px; border-radius:999px; font-size:0.9rem; width:220px;
+    font-family:inherit;
+  }
+  .search-input::placeholder{ color:var(--text-dim); }
+
   .filters{ display:flex; gap:10px; flex-wrap:wrap; }
   .filter-btn{
     background:var(--surface); border:1px solid var(--line); color:var(--text-dim);
@@ -364,6 +372,7 @@
       <h2>Catálogo</h2>
       <p>Filtre por tipo de energia e adicione ao carrinho.</p>
     </div>
+    <input type="text" id="searchInput" class="search-input" placeholder="🔍 Buscar carta...">
     <div class="filters" id="filters"></div>
   </div>
   <div class="grid" id="grid"></div>
@@ -438,6 +447,11 @@
      ============================================================ */
   let cart = {};        // { productId: qty }
   let activeFilter = "todos";
+  let searchQuery = "";
+  document.getElementById('searchInput').addEventListener('input', (e)=>{
+  searchQuery = e.target.value.toLowerCase();
+  renderGrid();
+});
 
   const fmt = (n) => n.toLocaleString('pt-BR', { style:'currency', currency:'BRL' });
 
@@ -466,7 +480,9 @@
      ============================================================ */
   const gridEl = document.getElementById('grid');
   function renderGrid(){
-    const list = activeFilter === "todos" ? PRODUCTS : PRODUCTS.filter(p => p.type === activeFilter);
+   const list = PRODUCTS
+  .filter(p => activeFilter === "todos" || p.type === activeFilter)
+  .filter(p => p.name.toLowerCase().includes(searchQuery));
     gridEl.innerHTML = list.map(p => {
       const t = TYPES[p.type];
       const stars = Array.from({length:5}, (_,i) => `<span class="${i < p.rarity ? '' : 'off'}">★</span>`).join('');
