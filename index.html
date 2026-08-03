@@ -217,6 +217,10 @@
   .card:hover .card-art::after{ transform:translateX(120%); }
   .card-art .glyph{ font-size:3.6rem; filter:drop-shadow(0 6px 10px rgba(0,0,0,0.35)); }
   .card-art.has-image .card-badge, .card-art.has-image .card-hp{ display:none; }
+  .card-art.has-image .card-badge, .card-art.has-image .card-hp{ display:none; }
+  .card:has(.has-image) .card-body h3{ color:#14162B; }
+  .card:has(.has-image) .price{ color:#14162B; }
+  .card:has(.has-image) .rarity span.off{ color:rgba(20,22,43,0.15); }
   .card-badge{
     position:absolute; top:10px; left:10px; background:rgba(0,0,0,0.35);
     border:1px solid rgba(255,255,255,0.25); backdrop-filter:blur(4px);
