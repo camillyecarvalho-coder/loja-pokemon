@@ -322,13 +322,32 @@
   }
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; animation:none !important; }
-    body::after{
-    content:''; position:fixed; inset:0; z-index:200;
-    border:8px solid var(--water); pointer-events:none;
+  }
+
+  /* ---------- Caixa branca com fundo azul ao redor ---------- */
+  body{
+    background:
+      repeating-radial-gradient(circle, rgba(61,200,240,0.12) 0px, rgba(61,200,240,0.12) 1px, transparent 1px, transparent 22px),
+      #0a1f33;
+  }
+  .site-wrapper{
+    max-width:1400px; margin:0 auto; background:#ffffff;
+    box-shadow:0 0 80px rgba(0,0,0,0.5); overflow:hidden;
+  }
+  .site-wrapper .hero{ background:#ffffff; }
+  .site-wrapper .hero h1{ color:#14162B; }
+  .site-wrapper .hero p{ color:#4a4d6b; }
+  .site-wrapper .hero-stats .stat b{ color:#14162B; }
+  .site-wrapper .hero-stats .stat span{ color:#666a8f; }
+  .site-wrapper .catalog-head h2{ color:#14162B; }
+  .site-wrapper .catalog-head p{ color:#4a4d6b; }
+  .site-wrapper footer{ background:var(--bg-soft); }
+</style>
   }
 </style>
 </head>
 <body>
+<div class="site-wrapper">
 
 <header>
   <div class="header-inner">
@@ -428,6 +447,7 @@
     </div>
   </div>
 </footer>
+</div>
 
 <script>
   /* ============================================================
