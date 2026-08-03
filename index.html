@@ -170,9 +170,11 @@
   .catalog-head p{ color:var(--text-dim); margin-top:6px; }
 
   .search-input{
-    background:var(--surface); border:1px solid var(--line); color:var(--text);
+    background:#F9C9D4; border:1px solid #F7B3C2; color:#5a2a35;
     padding:10px 16px; border-radius:999px; font-size:0.9rem; width:220px;
     font-family:inherit;
+  }
+  .search-input::placeholder{ color:#8a5763; }
   }
   .search-input::placeholder{ color:var(--text-dim); }
 
@@ -441,23 +443,14 @@ body{
     instagram: "https://instagram.com/seu_usuario", // <-- troque pelo instagram
   };
 
-  /* Catálogo de exemplo — troque nome, tipo, hp, raridade e preço pelas cartas reais.
-     "type" controla a cor e o ícone do card. */
-  const TYPES = {
-    fogo:     { label: "Fogo",     color: "#FF6B4A", glyph: "🔥" },
-    agua:     { label: "Água",     color: "#3DC8F0", glyph: "💧" },
-    grama:    { label: "Grama",    color: "#6FCF6E", glyph: "🍃" },
-    eletrico: { label: "Elétrico", color: "#FFD43B", glyph: "⚡" },
-    psiquico: { label: "Psíquico", color: "#C77DFF", glyph: "🔮" },
-  };
 
   /* Para colocar a foto real de uma carta, adicione "image: 'cartas/nome-do-arquivo.jpg'"
      dentro do produto (veja o exemplo comentado no primeiro item). Se não tiver "image",
      o site mostra o ícone colorido automaticamente. */
   const PRODUCTS = [
-  { id:1, name:"Caixa de Exibição de Booster Aprimorada Mega Evolução", type:"fogo", hp:120, rarity:5, price:45.00, image:"carta1.jpg" },
-  { id:2, name:"Carta Comum — Tipo Água", type:"agua", hp:70, rarity:2, price:8.00, image:"carta2.jpg" },
-  { id:3, name:"Carta Incomum — Tipo Grama", type:"grama", hp:80, rarity:3, price:14.00, image:"carta3.jpg" },
+  { id:1, name:"Caixa de Exibição de Booster Aprimorada Mega Evolução", type:"fogo", hp:120, price:50.69, image:"carta1.jpg" },
+  { id:2, name:"Combo de Pacotes - Megaevolução 2.5 - Heróis Excelsos", type:"agua", hp:70, price:260.00, image:"carta2.jpg" },
+  { id:3, name:"Coleção Pokémon TCG: Mega Kangaskhan", type:"grama", hp:80, price:199.99, image:"carta3.jpg" },
     
   ];
 
