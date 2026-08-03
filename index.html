@@ -96,7 +96,11 @@
   }
 
   /* ---------- Hero ---------- */
-  .hero{ padding:76px 24px 60px; position:relative; overflow:hidden; }
+  .hero{ padding:76px 24px 60px; position:relative; overflow:hidden; background:#ffffff; }
+  .hero h1{ color:#0d0e1c; }
+  .hero p{ color:#333333; }
+  .hero-stats .stat b{ color:#0d0e1c; }
+  .hero-stats .stat span{ color:#555555; }
   .hero-inner{
     max-width:1180px; margin:0 auto;
     display:grid; grid-template-columns:1.1fr 0.9fr; gap:40px; align-items:center;
@@ -318,6 +322,9 @@
   }
   @media (prefers-reduced-motion: reduce){
     *{ transition:none !important; animation:none !important; }
+    body::after{
+    content:''; position:fixed; inset:0; z-index:200;
+    border:8px solid var(--water); pointer-events:none;
   }
 </style>
 </head>
