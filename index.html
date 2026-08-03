@@ -111,19 +111,21 @@
   }
   .eyebrow{
     display:inline-flex; align-items:center; gap:8px;
-    background:var(--surface); border:1px solid var(--line);
+    background:#F0F1F8; border:1px solid #E0E2ED;
     padding:6px 14px; border-radius:999px;
-    font-size:0.78rem; font-weight:700; color:var(--electric);
+    font-size:0.78rem; font-weight:700; color:#14162B;
     margin-bottom:22px; letter-spacing:0.3px;
+  }
   }
   .hero h1{
     font-size:clamp(2.3rem, 5vw, 3.6rem);
     line-height:1.05; font-weight:800; margin-bottom:20px;
     text-transform:uppercase;
   }
-  .hero h1 .accent{
-    background:linear-gradient(90deg, var(--fire), var(--electric));
-    -webkit-background-clip:text; background-clip:text; color:transparent;
+  .site-wrapper .hero h1 .accent{
+    color:#14162B;
+    background:none; -webkit-background-clip:unset; background-clip:unset;
+  }
   }
   .hero p{ color:var(--text-dim); font-size:1.08rem; max-width:480px; margin-bottom:30px; }
   .hero-ctas{ display:flex; gap:14px; flex-wrap:wrap; }
@@ -136,8 +138,9 @@
     box-shadow:0 8px 24px -8px rgba(255,107,74,0.6);
   }
   .btn-primary:hover{ transform:translateY(-2px); box-shadow:0 12px 28px -8px rgba(255,107,74,0.75); }
-  .btn-ghost{
-    background:transparent; border:1px solid var(--line); color:var(--text);
+ .site-wrapper .btn-ghost{
+    background:transparent; border:1px solid #14162B; color:#14162B;
+  }
   }
   .btn-ghost:hover{ background:var(--surface); }
 
